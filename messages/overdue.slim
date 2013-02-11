@@ -1,0 +1,6 @@
+b 
+  |Payment overdue projects: #{projects.count}
+br
+- projects.each_with_index do |project, index|
+  = "#{index} #{project.name} #{project.total}€ #{project.payment_on}"
+  br
