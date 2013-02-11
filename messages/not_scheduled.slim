@@ -2,5 +2,5 @@ b
   |Projects with no scheduled payments: #{projects.count}
 br
 - projects.each_with_index do |project, index|
-  = "#{index+1} #{project.name} #{project.total}€"
+  = "#{index+1} #{project['name']} #{project['total']}€"
   br

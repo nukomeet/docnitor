@@ -2,5 +2,5 @@ b
   |Projects waiting for payment estimation: #{projects.count}
 br
 - projects.each_with_index do |project, index|
-  = "#{index+1} #{project.name}"
+  = "#{index+1} #{project['name']}"
   br
