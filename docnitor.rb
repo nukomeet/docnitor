@@ -11,6 +11,11 @@ require "rack/env"
 
 Cuba.plugin Cuba::Sugar::As
 Cuba.plugin Cuba::Render
+Cuba.use Rack::Env
+
+Cuba.use Rack::Auth::Basic, "Restricted Area" do |username, password|
+    [username, password] == [ENV['AUTH_USERNAME'], ENV['AUTH_PASSWORD']]
+end
 
 Cuba.define do
   on get do
