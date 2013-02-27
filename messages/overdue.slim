@@ -1,6 +1,6 @@
-b 
+b
   |Payment overdue projects: #{projects.count}
 br
 - projects.each_with_index do |project, index|
-  = "#{index+1} #{project['name']} #{project['total']}€ #{project['payment_on']}"
+  = "#{index+1} #{project['name']} #{project['total']}€ for #{(Date.today - project['payment_on']).to_i} day(s)"
   br
