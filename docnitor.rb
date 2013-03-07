@@ -38,8 +38,8 @@ Cuba.define do
       projects.each do |project|
         not_estimated << project if project['total'].empty?
         not_scheduled << project if project['payment_on'].nil?
-        waiting_for_payments << project if (project['payment_on'].nil? ? false : project['payment_on'] > Date.today)
-        overdue << project if (project['payment_on'].nil? ? false : (project['payment_on'] < Date.today && project['payed_on'].nil?))
+        waiting_for_payments << project if (project['payment_on'].nil? ? false : project['payment_on'] > Date.today) && project['payed_on'].nil?
+        overdue << project if (project['payment_on'].nil? ? false : project['payment_on'] < Date.today) && project['payed_on'].nil?
       end
 
       def color(elements, color='red')
