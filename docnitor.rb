@@ -22,7 +22,7 @@ Cuba.define do
     on root do
       client = HipChat::Client.new(ENV['HIPCHAT_TOKEN'])
       session = GoogleDrive.login(ENV['G_USERNAME'], ENV['G_PASSWORD'])
-      ws = session.spreadsheet_by_key(ENV['SHEET_KEY']).worksheets[3]
+      ws = session.spreadsheet_by_key(ENV['SHEET_KEY']).worksheet_by_title('Bank')
 
       projects = []
 
